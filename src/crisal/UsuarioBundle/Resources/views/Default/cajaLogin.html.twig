@@ -1,0 +1,44 @@
+{# El usuario esta logueado #}
+{% if is_granted('ROLE_USUARIO') %}
+    {% for mensaje in app.session.flashbag.get('info') %}
+        <p class="info">{{ mensaje }}</p>
+    {% endfor %}
+    <div class="login">
+        <div class="user-conectado">
+            <p>Conectado como <strong>{{ app.user }}</strong></p>
+        </div>
+        <div>
+            <div class="menu-user-conectado"><a href="{{ path('usuario_citas', {'citas': app.user.id}) }}">Zona de citas</a></div>
+            <div class="menu-user-conectado"><a href="{{ path('usuario_perfil') }}">Editar perfil</a></div>    
+            <div class="menu-user-conectado"><a href="{{ path('usuario_contraseña') }}">Contraseña</a></div>    
+            <div class="menu-user-conectado"><a href="{{ path('usuario_logout') }}">Cerrar sesión</a></div>    
+        </div>
+    </div>
+{# El usuario todavia no ha hecho login #}
+{% else %}
+    <div id="login">
+        <div class="widget">
+            <h3><a href="#">REGíSTRATE</a></h3>
+        </div>
+        <div id="registro_usuarios">
+            <div class="titulo">
+                Accede a tu cuenta
+            </div>
+            <div id="registrar_usuarios">
+                <form action="{{ path('usuario_login_check') }}" method="post">
+                    <fieldset>
+                        <p>
+                            <label id="email"for="login_user">E-mail</label>
+                            <input id="login_user" type="text" name="_username"value="{{ last_username | default('') }}"/>
+                        </p>
+                        <p>
+                            <label id="password" for="login_pass">Contraseña</label>
+                            <input id="login_pass" type="password" name="_password"/>
+                        </p>
+                    </fieldset>
+                    <button type="submit" class="button">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endif %}

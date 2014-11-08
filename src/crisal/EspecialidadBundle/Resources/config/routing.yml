@@ -1,0 +1,3 @@
+especialidades:
+    path:    /
+    defaults: { _controller: EspecialidadBundle:Default:especialidades }

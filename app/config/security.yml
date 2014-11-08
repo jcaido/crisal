@@ -1,0 +1,25 @@
+security:
+    encoders:
+        crisal\UsuarioBundle\Entity\Usuarios: { algorithm: sha512, iterations: 10 }
+
+    providers:
+        Usuarios:
+            entity: { class: crisal\UsuarioBundle\Entity\Usuarios, property: Email_usuario } 
+
+    firewalls:
+        frontend:
+            pattern:    ^/*
+            provider:   Usuarios    
+            anonymous:   ~
+            form_login:
+                login_path: usuario_login
+                check_path: usuario_login_check
+            logout:
+                path: usuario_logout
+                target: portada
+
+    access_control:
+        - { path: ^/Usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/Usuario/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/Usuario/*, roles: ROLE_USUARIO }
+        - { path: ^/Citas/*, roles: ROLE_USUARIO } 

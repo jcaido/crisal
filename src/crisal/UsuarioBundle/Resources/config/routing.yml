@@ -1,0 +1,14 @@
+usuario_login:
+    path:    /login
+    defaults: { _controller:UsuarioBundle:Default:login }
+    
+usuario_login_check:
+    path:    /login_ckeck
+    
+usuario_logout:
+    path:    /logout
+    
+usuario_citas:
+    path:    /citas{user}/
+    defaults: { _controller:UsuarioBundle:Default:citas }
+

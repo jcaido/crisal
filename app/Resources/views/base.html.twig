@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}{% endblock %}</title>
+        <script src="{{ asset('bundles/cita/js/jquery-2.0.3.js') }}" type="text/javascript"></script>
+        <!--[if lt IE 9]>
+		<script src="{{ asset('bundles/especialidad/js/modernizr.custom.js') }}"></script>
+	<![endif]-->
+        <script src="{{ asset('bundles/especialidad/js/jquery.flexslider-min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/especialidad/js/functions.js') }}" type="text/javascript"></script>
+        
+        {% block stylesheet %}{% endblock %}
+        
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div id="wrapper">
+            <!-- top-section -->
+            <section class="top-section">
+                <!-- header -->
+                <header>
+                    <div class="shell">
+                        <h1 id="logo"><a href="#">crisal</a></h1>
+                            <!-- navigation -->
+                            <nav id="navigation">
+                                <a href="{{ path('portada') }}" class="active">INICIO</a>
+                                <a href="{{ path('quienes_somos') }}">QUIENES SOMOS</a>
+                                <a href="{{ path('especialidades') }}">SERVICIOS</a>
+                                <a href="{{ path('especialistas') }}">PROFESIONALES</a>
+                            </nav>
+                            <!-- end of navigation -->
+                    </div>
+                </header>
+                <!-- end of header -->
+                
+                {% block shell %}{% endblock %}
+                
+            </section>
+            <!-- end of top-section -->
+            
+            {% block main %}{% endblock %}
+            
+            {% block bottomSection %}{% endblock %}
+            
+        </div>
+        <!-- end of wrapper -->
+        
+        <div id="footer">
+            <div class="shell">
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="{{ path('pagina_estatica', { 'pagina': 'contacto' }) }}">Contacto</a></li>
+                        <li><a href="{{ path('pagina_estatica', { 'pagina': 'licencia' }) }}">Licencia</a></li>
+                        <li><a href="{{ path('pagina_estatica', { 'pagina': 'privacidad' }) }}">Privacidad</a></li>
+                        <li><a href="{{ path('pagina_estatica', { 'pagina': 'terminosycondiciones' }) }}">Términos y condiciones</a></li>
+                    </ul>    
+                </div>
+                <p class="copy">&copy;2014 - Centro médico CRISAL &nbsp;| &nbsp;Copyright &copy;2012 design by: <a href="http://chocotemplates.com" target="_blank">CHOCOTEMPLATES.COM</a></p>        
+                <div class="cl">&nbsp;</div>
+            </div>
+        </div>
+    </body>
+</html>

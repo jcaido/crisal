@@ -1,0 +1,3 @@
+cita_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: CitaBundle:Default:index }

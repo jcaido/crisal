@@ -1,0 +1,3 @@
+especialistas:
+    path:    /
+    defaults: { _controller: EspecialistaBundle:Default:especialistas }

@@ -1,0 +1,31 @@
+backend:
+    resource: "@BackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+cita:
+    resource: "@CitaBundle/Resources/config/routing.yml"
+    prefix:   /Citas
+
+especialista:
+    resource: "@EspecialistaBundle/Resources/config/routing.yml"
+    prefix:   /Especialistas
+
+usuario:
+    resource: "@UsuarioBundle/Resources/config/routing.yml"
+    prefix:   /Usuario
+
+especialidad:
+    resource: "@EspecialidadBundle/Resources/config/routing.yml"
+    prefix:   /Especialidades
+    
+pagina_estatica:
+    path:    /sitio/{pagina}/
+    defaults: { _controller: EspecialidadBundle:Sitio:estatica }
+
+portada:
+    path:    /
+    defaults: { _controller: EspecialidadBundle:Default:portada }
+    
+quienes_somos:
+    path:    /QuienesSomos
+    defaults: { _controller: EspecialidadBundle:Default:quienessomos }

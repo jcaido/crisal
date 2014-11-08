@@ -1,0 +1,97 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %}Inicio | CRISAL Centro médico{% endblock %}
+
+{% block shell %}
+    <!-- shell -->
+    <div class="shell">
+        {% if error %}
+            <div class="info"><strong>{{ error.message | trans }}</strong></div>       
+        {% endif %}
+        <!-- slider -->
+        <div class="slider-holder">
+            <span class="slider-t"></span>
+            <span class="slider-b-left"></span>
+            <span class="slider-b-center"></span>
+            <span class="slider-b-right"></span>
+            <span class="slider-l"></span>
+            <span class="slider-r"></span>
+            <div class="flexslider">
+	        <ul class="slides">
+                    <li><img src="{{ asset('bundles/especialidad/images/ImagenSliderCrisal1.jpg') }}" alt=""></li>
+                    <li><img src="{{ asset('bundles/especialidad/images/ImagenSliderCrisal2.jpg') }}" alt="" /></li>
+                    <li><img src="{{ asset('bundles/especialidad/images/ImagenSliderCrisal3.jpg') }}" alt="" /></li>
+                    <li><img src="{{ asset('bundles/especialidad/images/ImagenSliderCrisal4.jpg') }}" alt="" /></li>
+                    <li><img src="{{ asset('bundles/especialidad/images/ImagenSliderCrisal2.jpg') }}" alt="" /></li>
+                </ul>
+            </div>
+        </div>
+        <!-- end of slider-holder -->
+        <h2>CRISAL centro médico</h2>
+	<h3>"Profesionalidad, atención ... SALUD"</h3>
+    </div>
+    <!-- end of shell -->    
+{% endblock %}
+
+{% block main %}
+    <!-- main -->
+    <div class="main">
+        <div class="shell">
+            <span class="main-arr"></span>
+            <!-- content -->
+            <div class="content">
+                <h3>QUIENES SOMOS</h3>
+                <img src="{{ asset('bundles/especialidad/images/QuienesSomos.png') }}" alt="" class="alignright" />
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non tortor quis tellus
+                   euismod sodales. Donec tincidunt auctor convallis. Nunc tincidunt nibh nec odio venenatis
+                   et condimentum nisl dapibus. Integer ipsum elit, commodo ac congue quis, varius at eros.
+                   Praesent tempus vulputate tortor eu feugia mecenas balem noctur. Donec tincidunt auctor
+                   convallis. Nunc tincidunt nibh nec odio venenatis et condimentum nisl dapibus. Integer ipsum elit
+                </p>
+                <a href="{{ path('quienes_somos') }}" class="more-btn">Leer más</a>
+            </div>
+            <!-- end of content -->
+            <aside>
+                {% if error %}
+                    <div class="info"><strong>{{ error.message | trans }}</strong></div>       
+                {% endif %}
+		{{ render(controller('UsuarioBundle:Default:cajaLogin')) }}
+            </aside>
+            <div class="cl">&nbsp;</div>
+        </div>
+    </div>
+    <!-- end of main -->    
+{% endblock %}
+
+{% block bottomSection %}
+    <section class="bottom-section">
+        <div class="shell">
+            <div class="cols">
+                <div class="col">
+                    <h4>SERVICIOS</h4>
+                    <div class="user">
+                        <img src="{{ asset('bundles/especialidad/images/Servicios.png') }}" alt="" class="alignleft" />
+                        <p>Consectetur adipiscing elit. Nunc ornare consequat tortor quis lorem ipsum dolor sit
+                           Consectetur adipi adipiscing elit. Nunc ornare consequat tortor quis lorem ipsum dolor
+                           sit amet, consectetur adipiscing elit.
+                        </p>    
+                    </div>
+                    <a href="{{ path('especialidades') }}" class="more-btn">Leer más</a>
+                </div>
+                <div class="col">
+                    <h4>PROFESIONALES</h4>
+                    <div class="user">
+                        <img src="{{ asset('bundles/especialidad/images/Profesionales.png') }}" alt="" class="alignleft" />
+                        <p>Consectetur adipiscing elit. Nunc ornare consequat tortor quis lorem ipsum dolor sit
+                           Consectetur adipi adipiscing elit. Nunc ornare consequat tortor quis lorem ipsum dolor
+                           sit amet, consectetur adipiscing elit.
+                        </p>
+                    </div>
+                    <a href="{{ path('especialistas') }}" class="more-btn">Leer más</a>
+                </div>
+                <div class="cl">&nbsp;</div>
+            </div>
+        </div>
+    </section>
+    <div id="footer-push"></div>   
+{% endblock %}
