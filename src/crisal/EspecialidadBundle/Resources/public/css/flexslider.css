@@ -48,7 +48,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 
 /* Direction Nav */
 .flex-direction-nav, .flex-control-nav { position: relative; z-index: 10000000; }
-.flex-direction-nav li a {  width: 48px; height: 70px; margin: 0 0px 0 0px; display: block; background: url(images/slider-btn.png) no-repeat 0 0; position: absolute; bottom: 240px; cursor: pointer; text-indent: -9999px; z-index: 1200;}
+.flex-direction-nav li a {  width: 48px; height: 70px; margin: 0 0px 0 0px; display: block; background: url("../images/slider-btn.png") no-repeat 0 0; position: absolute; bottom: 240px; cursor: pointer; text-indent: -9999px; z-index: 1200;}
 .flex-direction-nav li .next { background-position: 0 bottom; right: 4px; }
 .flex-direction-nav li .prev { left: 3px; }
 
@@ -61,6 +61,6 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 .flex-control-nav { position: absolute; bottom: 70px; left: 50%; margin-left: -44px;  }
 .flex-control-nav li { margin: 0 0 0 5px; float: left; zoom: 1; *display: inline; }
 .flex-control-nav li:first-child { margin: 0; }
-.flex-control-nav li a { width: 15px; height: 15px; display: block; background: url(images/control-nav.png) no-repeat 0 0; cursor: pointer; text-indent: -9999px; }
+.flex-control-nav li a { width: 15px; height: 15px; display: block; background: url("../images/control-nav.png") no-repeat 0 0; cursor: pointer; text-indent: -9999px; }
 .flex-control-nav li a:hover { background-position: 0 -16px; }
 .flex-control-nav li a.active { background-position: 0 -16px; cursor: default; }
