@@ -12,15 +12,6 @@ $(function() {
 	$('.col ul li:last').addClass('last')
 	$('.footer-nav li:last').addClass('last')
 
-	$('.flexslider li .slide-cnt .thumbnail a').hover(function(){
-
-		$(this).stop(true,true).animate({"top": "-10px"}, "fast");
-
-		}, function () {
-  		  $(this).animate({"top": "0px"}, "fast")	
-		}
-	)
-
 });
 
 $(window).load(function() {
